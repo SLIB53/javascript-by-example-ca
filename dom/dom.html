@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<script>
+    const FRUITS = [
+        'apple',
+        'banana',
+        'blueberry',
+        'grape',
+        'orange'
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const list = document.querySelector('#myfruits');
+        console.log(list);
+
+        const items = list.querySelectorAll('.fruits__item');
+        console.log(items);
+    });
+
+    function AddFruit() {
+        const list = document.querySelector('#myfruits');
+
+        const newItem = document.createElement('li');
+        const i = Math.round(Math.random() * (FRUITS.length - 1));
+        newItem.innerText = FRUITS[i];
+
+        list.appendChild(newItem);
+    }
+</script>
+
+
+<button type="submit" onclick="AddFruit()">Add Fruit</button>
+
+<ul id="myfruits" class="fruits">
+    <li class="fruits__item">apple</li>
+    <li class="fruits__item">orange</li>
+</ul>
